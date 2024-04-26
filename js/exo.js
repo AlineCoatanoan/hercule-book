@@ -1,4 +1,5 @@
-//Création du profil d'hercule. OBJET
+//OBJET
+
 let profil = {
         name: "Hercule",
         job: "Demi-Dieu",
@@ -11,7 +12,8 @@ let profil = {
 //Exécuter l'objet en argument dans la méthode de .base
 base.fillProfil(profil);
 
-//Créer un tableau avec les amis d'Hercule
+//TABLEAU
+
 const friends = ["Jupiter", "Junon", "Alcmène", "Déjanire"];
 console.log(friends[0]);
 
@@ -36,3 +38,44 @@ elementH1.textContent = "Vous consultez le profil d'Hercule";
 const headerBanner = document.querySelector("#header-banner");
 //insérer la variable (ID) dans l'élément
 headerBanner.appendChild(elementH1);
+
+//BOUCLE
+
+    const works = document.querySelectorAll('.panel--work');
+    for (const work of works) {
+        work.classList.remove('hidden');
+    }
+
+//CONDITIONS 
+
+    const hour = base.getHour();
+    const dispo = document.getElementById("availability");
+
+    if (hour > 20 || hour < 8) {
+        dispo.classList.add("off");
+    } else {
+        dispo.textContent = "disponible";
+    }
+
+//FONCTIONS
+
+
+function pseudo(firstname, number) {
+   let myPseudo = firstname + "-du-" + number;
+   return myPseudo;
+}
+
+const herculePseudo = pseudo(profil.name, profil.department);
+
+const profilName = document.getElementById("profil-name");
+profilName.textContent = herculePseudo;
+
+//EVENT
+
+const menu = document.getElementById("menu-toggler");
+
+    menu.addEventListener("click", (clickMenu) => {
+    headerBanner.classList.toggle("banner--open");
+});
+    menu.addEventListener("click", clickMenu);
+
