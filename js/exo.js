@@ -74,8 +74,40 @@ profilName.textContent = herculePseudo;
 
 const menu = document.getElementById("menu-toggler");
 
-    menu.addEventListener("click", (clickMenu) => {
+    menu.addEventListener("click", (event) => {
     headerBanner.classList.toggle("banner--open");
 });
-    menu.addEventListener("click", clickMenu);
+    menu.addEventListener("click", event);
+
+//EVENT BIS
+
+const formElement = document.getElementById("contact");
+
+formElement.addEventListener("submit", function (event){;
+event.preventDefault();
+alert("Hercule ne souhaite pas être dérangé");
+});
+
+
+//ALGO
+
+const popularityHercule = document.querySelector(".hercule__popularity");
+const popularityCesar = document.querySelector(".cesar__popularity");
+const herculeBar = document.querySelector("#trends-hercule .people__bar");
+const cesarBar = document.querySelector("#trends-cesar .people__bar");
+
+const total = base.vote.hercule + base.vote.cesar;
+
+const hercule = Math.round((base.vote.hercule / total)*100);
+const cesar = Math.round((base.vote.cesar / total)*100);
+
+popularityHercule.textContent = hercule + "%";
+popularityCesar.textContent = cesar + "%";
+
+herculeBar.style.width = `${hercule}%`;
+cesarBar.style.width = `${cesar}%`;
+
+
+
+
 

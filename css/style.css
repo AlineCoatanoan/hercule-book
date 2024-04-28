@@ -261,7 +261,7 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 50%;
+  width: 100%;
   background-color: #F38833;
   height: 3px;
   transition: width 1s 0s ease-in-out;
